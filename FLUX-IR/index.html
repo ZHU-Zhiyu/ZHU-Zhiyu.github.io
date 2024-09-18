@@ -91,9 +91,9 @@
           <h1 class="title is-1 publication-title">Learning Efficient and Effective Trajectory for Differential Equation-based Image Restoration</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://dblp.org/pid/213/4553.html">Jinhui Hou</a><sup>1</sup>,</span>
+              <a href="https://dblp.org/pid/213/4553.html">Zhiyu Zhu</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=d1L0KkoAAAAJ&hl=en">Zhiyu Zhu</a><sup>1</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=d1L0KkoAAAAJ&hl=en">Jinhui Hou</a><sup>1</sup>,</span>
             <span class="author-block">
               <a href="https://sites.google.com/site/junhuihoushomepage/biography">Junhui Hou</a><sup>1</sup>,
             </span>
@@ -103,21 +103,17 @@
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=-QvoSUkAAAAJ&hl=en&oi=ao">Huanqiang Zeng</a><sup>3</sup>,
             </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=u58FkyUAAAAJ&hl=en">Hui Yuan</a><sup>4</sup>
-            </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>City University of Hong Kong,</span>
             <span class="author-block"><sup>2</sup>Saint Francis University</span>
             <span class="author-block"><sup>3</sup>Huaqiao University</span>
-            <span class="author-block"><sup>4</sup>Shandong University</span>
           </div>
-          <div class="is-size-5 publication-authors">
+          <!-- <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://nips.cc/">Advances in Neural Information Processing Systems, 2023</a></span>
-          </div>
+          </div> -->
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
@@ -130,7 +126,7 @@
                   <span>Paper</span>
                 </a>
               </span>
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/2310.17577.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -138,7 +134,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Video Link. -->
               <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
@@ -167,80 +163,6 @@
     </div>
   </div>
 </section>
-
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section> -->
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 
 <section class="section">
@@ -281,21 +203,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper studies a diffusion-based framework to address the low-light image enhancement problem. 
-            To harness the capabilities of diffusion models, we delve into this intricate process and advocate 
-            for the regularization of its inherent ODE-trajectory. To be specific, inspired by the recent research 
-            that low curvature ODE-trajectory results in a stable and effective diffusion process, we formulate a 
-            curvature regularization term anchored in the intrinsic non-local structures of image data, i.e., 
-            global structure-aware regularization, which gradually facilitates the preservation of complicated details 
-            and the augmentation of contrast during the diffusion process. This incorporation mitigates the adverse 
-            effects of noise and artifacts resulting from the diffusion process, leading to a more precise and flexible 
-            enhancement. To additionally promote learning in challenging regions, we introduce an uncertainty-guided 
-            regularization technique, which wisely relaxes constraints on the most extreme regions of the image. 
-            Experimental evaluations reveal that the proposed diffusion-based framework, complemented by rank-informed 
-            regularization, attains distinguished performance in low-light enhancement. The outcomes indicate substantial 
-            advancements in image quality, noise suppression, and contrast amplification in comparison with state-of-the-art methods. 
-            We believe this innovative approach will stimulate further exploration and advancement in low-light image 
-            processing, with potential implications for other applications of diffusion models.
+            The differential equation-based image restoration approach generally aims to establish learnable trajectories/paths connecting high-quality images to a tractable distribution, e.g., low-quality images or a Gaussian distribution. 
+            In this paper, we reformulate the optimization of the differential equation trajectories as two steps toward effective and efficient image restoration. 
+            Initially, we navigate effective restoration paths through a reinforcement learning process, gradually steering potential trajectories towards the most precise options. 
+            Additionally, to mitigate the considerable computational burden associated with iterative sampling, we employ trajectory distillation to streamline complex paths into several manageable steps with adaptable sizes.  
+            Extensive experiments showcase the superiority of the proposed method, which boosts $ $db on the tasks of de-raining, under-water, and low-light enhancement. 
+            Moreover, we also experimentally validated the effectiveness of the proposed method in a general reconstruction image restoration framework with 12B diffusion model FLUX-DEV. 
+            The source code is publicly available at \url{https://github.com/ZHU-Zhiyu/FLUX-IR}.
           </p>
          
         </div>
