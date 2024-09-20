@@ -2,35 +2,26 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="IR-Trajectory: Learning Efficient and Effective Trajectory for Differential Equation-based Image Restoration.">
+  <meta name="description" content="IR-Trajectory: Learning Efficient and Effective Trajectory for Differential Equation-based Image Restoration.">
   <meta name="keywords" content="Low-Light Enhancement, Diffusion models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GlobalDiff | IR-Trajectory: Learning Efficient and Effective Trajectory for Differential Equation-based Image Restoration</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
     function gtag() {
       dataLayer.push(arguments);
     }
-
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Exo:100" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -39,54 +30,39 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    /* Cool infinite background scrolling animation. */
+    @import url('https://fonts.googleapis.com/css?family=Exo:100');
+
+    /* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+    body {
+      margin-top: 13.5rem;
+      color: #999;
+      font: 400 16px/1.5 'Exo', ubuntu, "Segoe UI", helvetica, arial, sans-serif;
+      text-align: center;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+
+      animation: bg-scrolling-reverse .92s infinite; /* IE 10+ */
+      animation-timing-function: linear;
+    }
+
+    @keyframes bg-scrolling-reverse {
+      100% { background-position: 50px 50px; }
+    }
+
+    body::before {
+      content: "FLUX-IR";
+      font-size: 8rem;
+      font-weight: 100;
+      font-style: normal;
+      display: block;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
+
 <body>
-
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav> -->
-<div class="background-container">
-  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png" alt="">
-  <div class="stars"></div>
-  <div class="twinkling"></div>
-  <div class="clouds"></div>
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -114,53 +90,25 @@
             <span class="author-block"><sup>2</sup>Saint Francis University</span>
             <span class="author-block"><sup>3</sup>Huaqiao University</span>
           </div>
-          <!-- <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://nips.cc/">Advances in Neural Information Processing Systems, 2023</a></span>
-          </div> -->
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2310.17577.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/pdf/2310.17577.pdf" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
                 </a>
               </span>
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/2310.17577.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span> -->
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span> -->
-              <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/jinnh/GSAD"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://github.com/jinnh/GSAD" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
-                  </a>
+                </a>
               </span>
             </div>
-
           </div>
         </div>
       </div>
@@ -168,38 +116,26 @@
   </div>
 </section>
 
-
 <section class="section">
   <div class="container is-max-desktop">
-
     <div class="row is-centered has-text-centered">
       <div class="column">
         <div class="row">
-          <iframe frameborder="10" class="juxtapose"  height="300" 
-            src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=d2c2589a-7b48-11ee-b5be-6595d9b17862"></iframe>
-          <iframe frameborder="0" class="juxtapose"  height="300" 
-            src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=840ea122-7b48-11ee-b5be-6595d9b17862"></iframe>
+          <iframe frameborder="10" class="juxtapose" height="300" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=d2c2589a-7b48-11ee-b5be-6595d9b17862"></iframe>
+          <iframe frameborder="0" class="juxtapose" height="300" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=840ea122-7b48-11ee-b5be-6595d9b17862"></iframe>
         </div>
         <div class="row">
-          <iframe frameborder="0" class="juxtapose"  height="300" 
-            src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b92b885c-7b48-11ee-b5be-6595d9b17862"></iframe>
-          <iframe frameborder="0" class="juxtapose"  height="300"
-            src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=f4ad1ec6-7b44-11ee-b5be-6595d9b17862"></iframe>
+          <iframe frameborder="0" class="juxtapose" height="300" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b92b885c-7b48-11ee-b5be-6595d9b17862"></iframe>
+          <iframe frameborder="0" class="juxtapose" height="300" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=f4ad1ec6-7b44-11ee-b5be-6595d9b17862"></iframe>
         </div>
       </div>
     </div>
 
     <div class="content has-text-centered">
-      <video id="replay-video"
-             controls
-             muted
-             preload
-             playsinline
-             width="75%">
-        <source src="./static/videos/low_light_video2.mp4"
-                type="video/mp4">
+      <video id="replay-video" controls muted preload playsinline width="75%">
+        <source src="./static/videos/low_light_video2.mp4" type="video/mp4">
       </video>
-    </div> 
+    </div>
 
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -207,15 +143,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The differential equation-based image restoration approach generally aims to establish learnable trajectories/paths connecting high-quality images to a tractable distribution, e.g., low-quality images or a Gaussian distribution. 
-            In this paper, we reformulate the optimization of the differential equation trajectories as two steps toward effective and efficient image restoration. 
-            Initially, we navigate effective restoration paths through a reinforcement learning process, gradually steering potential trajectories towards the most precise options. 
-            Additionally, to mitigate the considerable computational burden associated with iterative sampling, we employ trajectory distillation to streamline complex paths into several manageable steps with adaptable sizes.  
-            Extensive experiments showcase the superiority of the proposed method, which boosts $ $db on the tasks of de-raining, under-water, and low-light enhancement. 
-            Moreover, we also experimentally validated the effectiveness of the proposed method in a general reconstruction image restoration framework with 12B diffusion model FLUX-DEV. 
-            The source code is publicly available at \url{https://github.com/ZHU-Zhiyu/FLUX-IR}.
+            The differential equation-based image restoration approach generally aims to establish learnable trajectories/paths connecting high-quality images to a tractable distribution, e.g., low-quality images or a Gaussian distribution.
+            In this paper, we reformulate the optimization of the differential equation trajectories as two steps toward effective and efficient image restoration.
+            Initially, we navigate effective restoration paths through a reinforcement learning process, gradually steering potential trajectories towards the most precise options.
+            Additionally, to mitigate the considerable computational burden associated with iterative sampling, we employ trajectory distillation to streamline complex paths into several manageable steps with adaptable sizes.
+            Extensive experiments showcase the superiority of the proposed method, which boosts $ $db on the tasks of de-raining, under-water, and low-light enhancement.
+            Moreover, we also experimentally validated the effectiveness of the proposed method in a general reconstruction image restoration framework with 12B diffusion model FLUX-DEV.
+            The source code is publicly available at <a href="https://github.com/ZHU-Zhiyu/FLUX-IR">this link</a>.
           </p>
-         
         </div>
       </div>
     </div>
@@ -225,47 +160,30 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
-        <img src="https://github.com/jinnh/GSAD/blob/main/images/framework.png?raw=true"
-          class="interpolation-image"
-          alt="Interpolate start reference image."/>
-        <p>
-          Illustration of the training workflow of the proposed method.
-        </p>
+        <img src="https://github.com/jinnh/GSAD/blob/main/images/framework.png?raw=true" class="interpolation-image" alt="Interpolate start reference image."/>
+        <p>Illustration of the training workflow of the proposed method.</p>
       </div>
     </div>
     <!--/ Paper results. -->
+
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Results</h2>
-        <img src="https://github.com/jinnh/GSAD/blob/main/images/quantitative%20results.png?raw=true"
-        class="interpolation-image"
-        alt="Interpolate start reference image."/>
-        <p>
-          Quantitative results on LOLv1 and LOLv2.
-        </p>
-        <img src="https://github.com/jinnh/GSAD/blob/main/images/visual%20results.png?raw=true"
-          class="interpolation-image"
-          alt="Interpolate start reference image."/>
-        <p>
-          Visual results on LOLv1 and LOLv2.
-        </p>
-        <img src="./static/images/visual_unpaired.png"
-          class="interpolation-image"
-          alt="Interpolate start reference image."/>
-        <p>
-          Visual results on unpaired real low-light images.
-        </p>
+        <img src="https://github.com/jinnh/GSAD/blob/main/images/quantitative%20results.png?raw=true" class="interpolation-image" alt="Interpolate start reference image."/>
+        <p>Quantitative results on LOLv1 and LOLv2.</p>
+        <img src="https://github.com/jinnh/GSAD/blob/main/images/visual%20results.png?raw=true" class="interpolation-image" alt="Interpolate start reference image."/>
+        <p>Visual results on LOLv1 and LOLv2.</p>
+        <img src="./static/images/visual_unpaired.png" class="interpolation-image" alt="Interpolate start reference image."/>
+        <p>Visual results on unpaired real low-light images.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>   @article{hou23global,
+    <pre><code>@article{hou23global,
       title={Global Structure-Aware Diffusion Process for Low-Light Image Enhancement},
       author={Jinhui Hou, Zhiyu Zhu, Junhui Hou, Hui Liu, Huanqiang Zeng, and Hui Yuan},
       journal={arXiv preprint arXiv:2310.17577},
@@ -274,12 +192,10 @@
   </div>
 </section>
 
-
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+      <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/jinnh/GSAD" class="external-link" disabled>
@@ -290,10 +206,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website, adapted from the following <a
-            href="https://github.com/nerfies/nerfies.github.io">source code</a>, is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This website, adapted from the following <a href="https://github.com/nerfies/nerfies.github.io">source code</a>, is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
         </div>
       </div>
