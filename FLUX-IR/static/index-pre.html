@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="IR-Trajectory: Learning Efficient and Effective Trajectory for Differential Equation-based Image Restoration.">
+  <meta name="keywords" content="Low-Light Enhancement, Diffusion models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLUX-IR| Learning Efficient and Effective Trajectory for Differential Equation-based Image Restoration</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Exo:100" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    /* Cool infinite background scrolling animation. */
+    @import url('https://fonts.googleapis.com/css?family=Exo:100');
+
+    /* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+    body {
+      margin-top: 0rem;
+      color: #999;
+      font: 400 16px/1.5 'Exo', ubuntu, "Segoe UI", helvetica, arial, sans-serif;
+      text-align: center;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+      zoom: 140%;
+      animation: bg-scrolling-reverse .92s infinite; /* IE 10+ */
+      animation-timing-function: linear;
+    }
+
+    @keyframes bg-scrolling-reverse {
+      100% { background-position: 50px 50px; }
+    }
+
+    body::before {
+      content: "FLUX-IR";
+      font-size: 8rem;
+      font-weight: 100;
+      font-style: normal;
+      display: block;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Learning Efficient and Effective Trajectories for Differential Equation-based Image Restoration</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=d1L0KkoAAAAJ&hl=en">Zhiyu Zhu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://dblp.org/pid/213/4553.html">Jinhui Hou</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://cis.sfu.edu.hk/people.html">Hui Liu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=-QvoSUkAAAAJ&hl=en&oi=ao">Huanqiang Zeng</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/junhuihoushomepage/biography">Junhui Hou</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>City University of Hong Kong,</span>
+            <span class="author-block"><sup>2</sup>Saint Francis University</span>
+            <span class="author-block"><sup>3</sup>Huaqiao University</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.04811" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/ZHU-Zhiyu/FLUX-IR" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="row is-centered has-text-centered">
+      <div class="column"></div>
+        <div class="row">
+          <iframe frameborder="0" class="juxtapose" height="610" width="63%" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7dbe28a6-7b01-11ef-9397-d93975fe8866"></iframe>
+        </div>
+        <div class="row">
+        <div class="row">
+          <iframe frameborder="0" class="juxtapose" height="300" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=73468938-7aff-11ef-9397-d93975fe8866"></iframe>
+          <iframe frameborder="0" class="juxtapose" height="300" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=8b07a446-7b02-11ef-9397-d93975fe8866"></iframe>
+        </div>
+        <!-- <div class="row">
+          <iframe frameborder="0" class="juxtapose" height="300" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b92b885c-7b48-11ee-b5be-6595d9b17862"></iframe>
+          <iframe frameborder="0" class="juxtapose" height="300" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=f4ad1ec6-7b44-11ee-b5be-6595d9b17862"></iframe>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="row">
+        <h2 class="title is-3">Visualization of Trajectories</h2>
+        <img height="610" width="40%"  src="./static/videos/VID_02.gif" class="interpolation-image" alt="Interpolate start reference image."/>
+        <!-- <p>Reinforcement ODE to SDE Trajectories.</p> -->
+        <img height="610" width="40%"  src="./static/videos/VID_01.gif" class="interpolation-image" alt="Interpolate start reference image."/>
+        <!-- <p>Visual results on unpaired real low-light images.</p> -->
+      </div>
+    </div>
+    <!-- <div class="content has-text-centered">
+      <video id="replay-video" controls muted preload playsinline width="75%">
+        <source src="./static/videos/low_light_video2.mp4" type="video/mp4">
+      </video>
+    </div> -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The differential equation-based image restoration approach generally aims to establish learnable trajectories/paths connecting high-quality images to a tractable distribution, e.g., low-quality images or a Gaussian distribution.
+            In this paper, we reformulate the optimization of the differential equation trajectories as two steps toward effective and efficient image restoration.
+            Initially, we navigate effective restoration paths through a reinforcement learning process, gradually steering potential trajectories towards the most precise options.
+            Additionally, to mitigate the considerable computational burden associated with iterative sampling, we employ trajectory distillation to streamline complex paths into several manageable steps with adaptable sizes.
+            Extensive experiments showcase the superiority of the proposed method, which boosts $ $db on the tasks of de-raining, under-water, and low-light enhancement.
+            Moreover, we also experimentally validated the effectiveness of the proposed method in a general reconstruction image restoration framework with 12B diffusion model FLUX-DEV.
+            The source code is publicly available at <a href="https://github.com/ZHU-Zhiyu/FLUX-IR">this link</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper method. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <img src="https://github.com/jinnh/GSAD/blob/main/images/framework.png?raw=true" class="interpolation-image" alt="Interpolate start reference image."/>
+        <p>Illustration of the training workflow of the proposed method.</p>
+      </div>
+    </div> -->
+    <!--/ Paper results. -->
+
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{FLUX-IR2024,
+      title={Learning Efficient and Effective Trajectories for Differential Equation-based Image Restoration},
+      author={Zhiyu Zhu, Jinhui Hou, Hui Liu, Huanqiang Zeng, and Junhui Hou},
+      journal={arXiv},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="./static/papers/Manuscript.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/ZHU-Zhiyu/FLUX-IR" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website, adapted from the following <a href="https://github.com/nerfies/nerfies.github.io">source code</a>, is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

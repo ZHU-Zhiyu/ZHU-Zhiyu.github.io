@@ -5,7 +5,7 @@
   <meta name="description" content="IR-Trajectory: Learning Efficient and Effective Trajectory for Differential Equation-based Image Restoration.">
   <meta name="keywords" content="Low-Light Enhancement, Diffusion models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FLUX-IR| Learning Efficient and Effective Trajectory for Differential Equation-based Image Restoration</title>
+  <title>FLUX-IR | Learning Efficient and Effective Trajectory for Differential Equation-based Image Restoration</title>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,13 +23,22 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/flux-ir.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  
+  <!-- Vendor Stylesheets -->
+  <!--=================js==========================-->
+  <link rel="stylesheet" href="static/css/tab_gallery.css">
+  <link rel="stylesheet" href="static/css/juxtapose.css">
+  <!-- <script src="./static/js/index.js"></script> -->
+  <!-- <link rel="stylesheet" href="./menlo"> -->
+  <link rel="stylesheet" href="static/css/image_card_fader.css">
+  <link rel="stylesheet" href="static/css/image_card_slider.css">
 
   <style>
     /* Cool infinite background scrolling animation. */
@@ -39,7 +48,7 @@
     body {
       margin-top: 0rem;
       color: #999;
-      font: 400 16px/1.5 'Exo', ubuntu, "Segoe UI", helvetica, arial, sans-serif;
+      font: 1000 16px/1.5 'Exo', ubuntu, "Segoe UI", helvetica, arial, sans-serif;
       text-align: center;
       background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
       zoom: 140%;
@@ -60,6 +69,7 @@
       margin-bottom: 20px;
     }
   </style>
+
 </head>
 
 <body>
@@ -68,6 +78,15 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
+		  <!-- <h1 class="title is-2 publication-title"> 
+            <span style="color: #D02090; font-size: 6rem">F</span>
+			<span style="color: #4285F4; font-size: 6rem">L</span>
+			<span style="color: #FBBC05; font-size: 6rem">U</span>
+			<span style="color: #34A853; font-size: 6rem">X</span>
+			<span style="font-size: 6rem">-</span>
+			<span style="color: #4285F4; font-size: 6rem">I</span>
+			<span style="color: #FBBC05; font-size: 6rem">R</span><br>
+          </h1> -->
           <h1 class="title is-1 publication-title">Learning Efficient and Effective Trajectories for Differential Equation-based Image Restoration</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -87,7 +106,7 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>City University of Hong Kong,</span>
-            <span class="author-block"><sup>2</sup>Saint Francis University</span>
+            <span class="author-block"><sup>2</sup>Saint Francis University,</span>
             <span class="author-block"><sup>3</sup>Huaqiao University</span>
           </div>
           <div class="column has-text-centered">
@@ -116,12 +135,96 @@
   </div>
 </section>
 
+
+
+
+<!--=================Teasers==========================-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <!-- The expanding image container -->
+      <div class="tab_container">
+        <!-- Close the image -->
+        <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+
+        <!-- Expanded image -->
+        <div id="juxtapose-embed" data-startingposition="30%" data-animate="true" class="juxtapose"
+          style="height: 700px; width: 790px;">
+          <!-- <div class="jx-slider">
+            <div class="jx-handle " style="left: 50%;">
+              <div class="jx-arrow jx-left"></div>
+              <div class="jx-control">
+                <div class="jx-controller" tabindex="0" role="slider" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+              <div class="jx-arrow jx-right"></div>
+            </div>
+            <div class="jx-image jx-left " style="width: 50%;"><img src="./src/UDC_1.png" alt="">
+              <div class="jx-label" tabindex="0">UDC images</div>
+            </div>
+            <div class="jx-image jx-right " style="width: 50%;"><img src="./src/AF_1.png" alt="">
+              <div class="jx-label" tabindex="0">AlignFormer results</div>
+            </div><a href="https://juxtapose.knightlab.com" target="_blank" rel="noopener" class="jx-knightlab">
+              <div class="knightlab-logo"></div><span class="juxtapose-name">JuxtaposeJS</span>
+            </a>
+          </div> -->
+        </div>
+
+        <div>
+          <div id="juxtapose-hidden"></div>
+        </div>
+
+        <!-- Image text -->
+        <div id="imgtext"></div>
+      </div>
+
+      <!-- The grid: four columns -->
+      <div class="tab_row">
+        <div class="tab_column">
+          <img src="static/images/SR_lq.png" onclick="tab_gallery_click('SR');">
+		  <span>SR</span>
+        </div>
+        <div class="tab_column">
+          <img src="static/images/denoising_lq.png" onclick="tab_gallery_click('denoising');">
+		  <span>Denoising</span>
+        </div>
+        <div class="tab_column">
+          <img src="static/images/deblur_lq.png" onclick="tab_gallery_click('deblur');">
+		  <span>Deblurring</span>
+        </div>
+        <div class="tab_column">
+          <img src="static/images/derain_lq.png" onclick="tab_gallery_click('derain');">
+		  <span>Deraining</span>
+        </div>
+        <div class="tab_column">
+          <img src="static/images/raindrop_lq.png" onclick="tab_gallery_click('raindrop');">
+		  <span>Raindrop</span>
+        </div>
+        <div class="tab_column">
+          <img src="static/images/desnowing_lq.png" onclick="tab_gallery_click('desnowing');">
+		  <span>Desnowing</span>
+        </div>
+        <div class="tab_column">
+          <img src="static/images/uie_lq.png" onclick="tab_gallery_click('uie');">
+		  <span>Underwater</span>
+        </div>
+        <div class="tab_column">
+          <img src="static/images/llie22_lq.png" onclick="tab_gallery_click('llie22');">
+		  <span>Low-light</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="row is-centered has-text-centered">
+    <!-- <div class="row is-centered has-text-centered">
       <div class="column"></div>
         <div class="row">
-          <iframe frameborder="0" class="juxtapose" height="610" width="63%" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7dbe28a6-7b01-11ef-9397-d93975fe8866"></iframe>
+          <iframe frameborder="0" class="juxtapose" height="720" width="63%" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7dbe28a6-7b01-11ef-9397-d93975fe8866"></iframe>
         </div>
         <div class="row">
         <div class="row">
@@ -131,9 +234,9 @@
         <!-- <div class="row">
           <iframe frameborder="0" class="juxtapose" height="300" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b92b885c-7b48-11ee-b5be-6595d9b17862"></iframe>
           <iframe frameborder="0" class="juxtapose" height="300" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=f4ad1ec6-7b44-11ee-b5be-6595d9b17862"></iframe>
-        </div> -->
+        </div> 
       </div>
-    </div>
+    </div> -->
 
     <div class="columns is-centered has-text-centered">
       <div class="row">
@@ -170,15 +273,55 @@
     <!--/ Abstract. -->
 
     <!-- Paper method. -->
-    <!-- <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
-        <img src="https://github.com/jinnh/GSAD/blob/main/images/framework.png?raw=true" class="interpolation-image" alt="Interpolate start reference image."/>
-        <p>Illustration of the training workflow of the proposed method.</p>
+		<div style="text-align: center; vertical-align:middle">
+		  <img src="static/images/Fig_strategy.png" width="800">
+		</div>
+		<div align="center">
+          <b>Illustration of the workflow of the proposed method. </b>
+		</div>
+		<div class="content has-text-justified">
+		<p>
+		Given a pre-trained diffusion model for image restoration, our trajectory optimization process contains the following two stages. 
+		<b>(1) Reinforced ODE alignment</b>, which aligns the deterministic ODE trajectory shown in <b>(a)</b> to the most effective modulated SDE trajectory, as shown in <b>(b)</b>. 
+		<b>(2) Distillation cost-aware ODE acceleration</b> in <b>(c)</b>, which achieves high-quality one-step inference via delicate designs based on the task, 
+		with the knowledge of the original pre-trained model preserved.  Note that to preserve the original knowledge of the pre-trained diffusion model, 
+		we aim to find a trajectory with less modification of gradient d<b>X</b>/dt. 
+		Through theoretical analyses and experimental validations, we find that for image restoration tasks, 
+		degraded measurements usually lie in the low probability region from the probabilistic space of high-quality samples. 
+		Thus, we also utilize the input measurements as negative guidance to rectify the gradient of log-density. 
+		As shown in the sub-figure of the probabilistic view, <b>A</b>, <b>B</b>, and <b>C</b> correspond to the low-quality measurement, 
+		reconstructed sample, and reconstruction by a low-quality image as negative guidance, respectively.
+		</p>
+		</div>
       </div>
-    </div> -->
+    </div>
     <!--/ Paper results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+        <div style="text-align: center; vertical-align:middle">
+          <img src="static/images/Unified_comparison_V3.png" width="800">
+        </div>
+        <div align="center">
+          <b>Visual comparison of unified image restoration.</b>
+        </div>
+	    </div>
 
+        <div style="text-align: center; vertical-align:middle">
+          <img src="static/images/Low_light_enhancement.png" width="800">
+		  <img src="static/images/deraining.png" width="800">
+		  <img src="static/images/Underwater_00.png" width="800">
+        </div>
+        <div align="center">
+          <b>Visual comparison of task-specific restoration.</b>
+        </div>
+	    </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -216,5 +359,101 @@
   </div>
 </footer>
 
+<!-- Image Slider Javascripts -->
+<!--=================Functions==========================-->
+<script src="static/js/juxtapose.js"></script>
+
+
+<script>
+  var slider;
+  let origImages = [
+    { "src": "static/images/SR_lq.png", "label": "Zoomed LQ", },
+    { "src": "static/images/SR_hq.png", "label": "Ours", }
+  ];
+  let origOptions = {
+    "makeResponsive": true,
+    "showLabels": true,
+    "mode": "horizontal",
+    "showCredits": true,
+    "animate": true,
+    "startingPosition": "50"
+  };
+
+  const juxtaposeSelector = "#juxtapose-embed";
+  const transientSelector = "#juxtapose-hidden";
+
+
+  function tab_gallery_click(name) {
+    // Get the expanded image
+    let inputImage = {
+      label: "Zoomed LQ",
+    };
+    let outputImage = {
+      label: "Ours",
+    };
+
+    inputImage.src = "static/images/".concat(name, "_lq", ".png")
+    outputImage.src = "static/images/".concat(name, "_hq", ".png")
+
+    let images = [inputImage, outputImage];
+    let options = slider.options;
+    options.callback = function (obj) {
+      var newNode = document.getElementById(obj.selector.substring(1));
+      var oldNode = document.getElementById(juxtaposeSelector.substring(1));
+      console.log(obj.selector.substring(1));
+      console.log(newNode.children[0]);
+      oldNode.replaceChild(newNode.children[0], oldNode.children[0]);
+      //newNode.removeChild(newNode.children[0]);
+
+    };
+
+    slider = new juxtapose.JXSlider(transientSelector, images, options);
+  };
+
+  (function () {
+    slider = new juxtapose.JXSlider(
+      juxtaposeSelector, origImages, origOptions);
+    //document.getElementById("left-button").onclick = replaceLeft;
+    //document.getElementById("right-button").onclick = replaceRight;
+  })();
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  // expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = name;
+  // Show the container element (hidden with CSS)
+  // expandImg.parentElement.style.display = "block";
+
+  $(".flip-card").click(function () {
+    console.log("fading in")
+    div_back = $(this).children().children()[1]
+    div_front = $(this).children().children()[0]
+    // console.log($(this).children("div.flip-card-back"))
+    console.log(div_back)
+    $(div_front).addClass("out");
+    $(div_front).removeClass("in");
+
+    $(div_back).addClass("in");
+    $(div_back).removeClass("out");
+
+  });
+
+  $(".flip-card").mouseleave(function () {
+    console.log("fading in")
+    div_back = $(this).children().children()[1]
+    div_front = $(this).children().children()[0]
+    // console.log($(this).children("div.flip-card-back"))
+    console.log(div_back)
+    $(div_front).addClass("in");
+    $(div_front).removeClass("out");
+
+    $(div_back).addClass("out");
+    $(div_back).removeClass("in");
+
+  });
+</script>
+
 </body>
 </html>
+
